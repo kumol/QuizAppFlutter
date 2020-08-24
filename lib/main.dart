@@ -11,7 +11,19 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Hello"),
         ),
-        body: Text("contineu"),
+        body: Column(
+          children: [
+            Text("Choose one"),
+            RaisedButton(
+              child: Text("option 1"),
+              onPressed: null,
+            ),
+            RaisedButton(
+              child: Text("Option 2"),
+              onPressed: null,
+            )
+          ],
+        ),
       ),
     );
   }
