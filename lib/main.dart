@@ -46,7 +46,11 @@ class _MyAppState extends State<MyApp> {
             RaisedButton(
               child: Text("Option 2"),
               onPressed: action,
-            )
+            ),
+            RaisedButton(
+              child: Text("Option 2"),
+              onPressed: () => print("clicked one"),
+            ),
           ],
         ),
       ),
