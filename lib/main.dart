@@ -44,11 +44,11 @@ class _MyAppState extends State<MyApp> {
               onPressed: () => print("clicked one"),
             ),
             RaisedButton(
-              child: Text("Option 2"),
+              child: Text("Option 3"),
               onPressed: action,
             ),
             RaisedButton(
-              child: Text("Option 2"),
+              child: Text("Option 4"),
               onPressed: () => print("clicked one"),
             ),
           ],
