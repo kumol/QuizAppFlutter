@@ -10,9 +10,7 @@ void main() {
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _MyAppState();
-    throw UnimplementedError();
   }
 }
 
@@ -27,23 +25,33 @@ class _MyAppState extends State<MyApp> {
 
   Widget build(BuildContext context) {
     var questions = [
-      "What is your favourite Person?",
-      "What is your favourite Book?"
+      {
+        "questionText": "What is your favourite Person?",
+        "answers": ["Nazrul", "Rabindra", "Salman", "Amir"]
+      },
+      {
+        "questionText": "What is your favourite Book?",
+        "answers": ["Poem", "Drama", "Novel", "Story"]
+      }
     ];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text("MY APP"),
         ),
-        body: Column(
-          children: [
-            Question(questions[_questionIndex]),
-            Answer(_action),
-            Answer(_action),
-            Answer(_action),
-            Answer(_action),
-          ],
-        ),
+        body: _questionIndex < questions.length
+            ? Column(
+                children: [
+                  Question(questions[_questionIndex]["questionText"]),
+                  ...(questions[_questionIndex]["answers"] as List<String>)
+                      .map((answer) {
+                    return Answer(_action, answer);
+                  }).toList()
+                ],
+              )
+            : Center(
+                child: Text("You Already Did this!"),
+              ),
       ),
     );
   }
