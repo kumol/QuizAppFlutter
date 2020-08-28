@@ -17,22 +17,41 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
-  void _action() {
+  var _totalScore = 0;
+  void _action(int score) {
+    _totalScore += score;
     setState(() {
       _questionIndex += 1;
     });
     print("clicked");
   }
 
+  void _resetQuiz() {
+    setState(() {
+      _questionIndex = 0;
+      _totalScore = 0;
+    });
+  }
+
   Widget build(BuildContext context) {
     var questions = [
       {
         "questionText": "What is your favourite Person?",
-        "answers": ["Nazrul", "Rabindra", "Salman", "Amir"]
+        "answers": [
+          {"text": "Nazrul", "score": 10},
+          {"text": "Rabindra", "score": 3},
+          {"text": "Salman", "score": 9},
+          {"text": "Amir", "score": 6}
+        ]
       },
       {
         "questionText": "What is your favourite Book?",
-        "answers": ["Poem", "Drama", "Novel", "Story"]
+        "answers": [
+          {"text": "Poem", "score": 5},
+          {"text": "Drama", "score": 8},
+          {"text": "Novel", "score": 6},
+          {"text": "Story", "score": 10}
+        ]
       }
     ];
     return MaterialApp(
@@ -46,7 +65,7 @@ class _MyAppState extends State<MyApp> {
                 getSelect: _action,
                 index: _questionIndex,
               )
-            : Result(),
+            : Result(_totalScore, _resetQuiz),
       ),
     );
   }
