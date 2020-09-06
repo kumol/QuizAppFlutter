@@ -88,24 +88,6 @@ class _MyAppState extends State<MyApp> {
           {"text": "Lalakhal", "score": 4},
           {"text": "Cox's Bazar", "score": 10}
         ]
-      },
-      {
-        "questionText": "What is your favourite Place to visit?",
-        "answers": [
-          {"text": "Hamham", "score": 4},
-          {"text": "Ratargul", "score": 8},
-          {"text": "Lalakhal", "score": 4},
-          {"text": "Cox's Bazar", "score": 10}
-        ]
-      },
-      {
-        "questionText": "What is your favourite Place to visit?",
-        "answers": [
-          {"text": "Hamham", "score": 4},
-          {"text": "Ratargul", "score": 8},
-          {"text": "Lalakhal", "score": 4},
-          {"text": "Cox's Bazar", "score": 10}
-        ]
       }
     ];
     return MaterialApp(
